@@ -10,4 +10,9 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="squnzr" options="--add-exports java.desktop/javax.sound=ALL-UNNAMED" />
+    </option>
+  </component>
 </project>
