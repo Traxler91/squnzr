@@ -22,7 +22,7 @@ public class midiSequenzer {
                 {60, 4, 1}
         };
         //building sequence
-        final int PPQS = 16;
+        final int PPQS = 16;    //sequence-track resolution (ticks per beat)
         final int STAKKATO = 4;
         Sequence seq = new Sequence(Sequence.PPQ, PPQS);
         Track track = seq.createTrack();
@@ -42,7 +42,7 @@ public class midiSequenzer {
                 msg = new ShortMessage();
                 msg.setMessage(ShortMessage.NOTE_OFF, 0, DATA[i][0], 0);
                 track.add(new MidiEvent(msg, currentTick));
-                currentTick += STAKKATO;
+                currentTick += STAKKATO; //pause per note
             }
         }
         //initialise sequencer & synthesizer
