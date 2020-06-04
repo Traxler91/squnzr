@@ -4,7 +4,6 @@ import javax.sound.midi.MidiSystem;
 import javax.sound.midi.Receiver;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Synthesizer;
-import java.nio.channels.ScatteringByteChannel;
 
 public class midiSynth {
     private static void playAME()
