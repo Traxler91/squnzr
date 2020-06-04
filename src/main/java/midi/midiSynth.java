@@ -8,7 +8,7 @@ import javax.sound.midi.Synthesizer;
 public class midiSynth {
     private static void playAME()
             throws Exception {
-        //Partitur {{pitch, DauerInViertelNoten, AnzahlWiederholungen,..}
+        //score {{pitch, DauerInViertelNoten, AnzahlWiederholungen,..}
         final int DATA[][] = {
                 {60, 1, 1},
                 {62, 1, 1},
