@@ -3,10 +3,10 @@ import java.io.File;
 
     final class SampleFilePlayer{
 
-        private static void playSampleFile(String name) /*, float pan, float gain*/
+        private static void playSampleFile(String name, float pan, float gain)
                 throws Exception {
             //AudioInputStream
-            AudioInputStream ais = AudioSystem.getAudioInputStream(new File(name));
+            AudioInputStream ais = AudioSystem.getAudioInputStream(new File("./sample/testAnalogFX.wav"));
 
             AudioFormat format = ais.getFormat();
             //ALAW/ULAW samples zu PCM konvertieren
@@ -34,12 +34,12 @@ import java.io.File;
             clip.open(ais);
 
             //PAN
-//            FloatControl panControl = (FloatControl)clip.getControl(FloatControl.Type.PAN);
-//            panControl.setValue(pan);
-//
-//            //MASTER_GAIN
-//            FloatControl gainControl = (FloatControl)clip.getControl(FloatControl.Type.MASTER_GAIN);
-//            gainControl.setValue(gain);
+            FloatControl panControl = (FloatControl)clip.getControl(FloatControl.Type.PAN);
+            panControl.setValue(pan);
+
+            //MASTER_GAIN
+            FloatControl gainControl = (FloatControl)clip.getControl(FloatControl.Type.MASTER_GAIN);
+            gainControl.setValue(gain);
 
             //Clip erstellen
             clip.start();
@@ -57,22 +57,22 @@ import java.io.File;
             clip.close();
         }
 
-        public static void main(String[]args) throws Exception {
-//            try {
-//                playSampleFile(
-//                        args[0],
-//                        Float.parseFloat(args[1]),
-//                        Float.parseFloat(args[2]));
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//                System.exit(1);
-//            }
-//            System.exit(0);
+        public static void main(String[]args) {
+            try {
+                playSampleFile(
+                        args[0],
+                        Float.parseFloat(args[1]),
+                        Float.parseFloat(args[2]));
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+            System.exit(0);
 
-            String filepath = "./sample/testAnalogFX.wav";
-
-            SampleFilePlayer test = new SampleFilePlayer();
-            test.playSampleFile(filepath);
+//            String filepath = "./sample/testAnalogFX.wav";
+//
+//            SampleFilePlayer test = new SampleFilePlayer();
+//            test.playSampleFile(filepath);
 
         }
     }
