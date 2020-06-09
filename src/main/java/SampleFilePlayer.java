@@ -1,4 +1,5 @@
 import javax.sound.sampled.*;
+import javax.sound.midi.*;
 import java.io.File;
 
     final class SampleFilePlayer{
@@ -34,7 +35,7 @@ import java.io.File;
             clip.open(ais);
 
             //PAN
-            FloatControl panControl = (FloatControl)clip.getControl(FloatControl.Type.PAN);
+            FloatControl panControl = (FloatControl) clip.getControl(FloatControl.Type.PAN);
             panControl.setValue(pan);
 
             //MASTER_GAIN
@@ -68,7 +69,7 @@ import java.io.File;
                 System.exit(1);
             }
             System.exit(0);
-
+            System.out.println();
 //            String filepath = "./sample/testAnalogFX.wav";
 //
 //            SampleFilePlayer test = new SampleFilePlayer();

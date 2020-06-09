@@ -17,9 +17,9 @@ public class midiLoader {
         synth.open();
         trans.setReceiver(rcvr);
         //read sequence & play
-        Sequence seq = MidiSystem.getSequence(new File("./sample/REGGAE.MID"));
+        Sequence seq = MidiSystem.getSequence(new File("./sample/42337.MID"));
         sequencer.setSequence(seq);
-        sequencer.setTempoInBPM(145);
+        sequencer.setTempoInBPM(120);
         sequencer.start();
         while (true) {
             try {
@@ -31,6 +31,8 @@ public class midiLoader {
                 break;
             }
         }
+
+
         //stop sequencer and close
         sequencer.stop();
         sequencer.close();
