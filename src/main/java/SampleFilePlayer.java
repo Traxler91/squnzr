@@ -4,7 +4,7 @@ import java.io.File;
 
     final class SampleFilePlayer{
 
-        private static void playSampleFile(String name, float pan, float gain)
+        private static void playSampleFile(String name, float gain) /*float pan,*/
                 throws Exception {
             //AudioInputStream
             AudioInputStream ais = AudioSystem.getAudioInputStream(new File("./sample/testAnalogFX.wav"));
@@ -34,9 +34,9 @@ import java.io.File;
             Clip clip = (Clip)AudioSystem.getLine(info);
             clip.open(ais);
 
-            //PAN
-            FloatControl panControl = (FloatControl) clip.getControl(FloatControl.Type.PAN);
-            panControl.setValue(pan);
+//            //PAN
+//            FloatControl panControl = (FloatControl) clip.getControl(FloatControl.Type.PAN);
+//            panControl.setValue(pan);
 
             //MASTER_GAIN
             FloatControl gainControl = (FloatControl)clip.getControl(FloatControl.Type.MASTER_GAIN);
@@ -62,7 +62,7 @@ import java.io.File;
             try {
                 playSampleFile(
                         args[0],
-                        Float.parseFloat(args[1]),
+//                        Float.parseFloat(args[1]),
                         Float.parseFloat(args[2]));
             } catch (Exception e) {
                 e.printStackTrace();
