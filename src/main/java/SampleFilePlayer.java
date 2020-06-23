@@ -7,7 +7,7 @@ import java.io.File;
         private static void playSampleFile(String name, float gain) /*float pan,*/
                 throws Exception {
             //AudioInputStream
-            AudioInputStream ais = AudioSystem.getAudioInputStream(new File("./sample/testAnalogFX.wav"));
+            AudioInputStream ais = AudioSystem.getAudioInputStream(new File("./sample/file_example_OOG_1MG.ogg"));
 
             AudioFormat format = ais.getFormat();
             //ALAW/ULAW samples zu PCM konvertieren
